@@ -1,0 +1,128 @@
+.art_app {
+    padding: 15px;
+    background: #191923;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .art_mobile_top_bar {
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+        height: 70px;
+        background: #20202a;
+        -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+        box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+        padding: 0 30px;
+        display: none;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        @media (max-width: 1032px) {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+    }
+
+    .art_app_wrapper {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #1e1e28;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        -webkit-box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+        box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+
+        .art_app_container {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+
+            @media (max-width: 1032px) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 1032px) {
+            border-radius: 0;
+            height: 100vh;
+        }
+    }
+
+    @media (max-width: 1032px) {
+        padding: 0;
+    }
+}
+
+.art_preloader {
+    margin: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px);
+    background: #20202a;
+    z-index: 999999;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    transition: opacity .55s ease-in-out;
+
+    .art_preloader_content {
+        margin-bottom: 15px;
+        text-align: center;
+
+        .art_preloader_load {
+            margin-top: 5px;
+            width: 200px;
+            position: relative;
+
+            svg {
+                transform: rotateY(180deg);
+            }
+
+            path {
+                &:first-child {
+                    stroke: #191923!important;
+                }
+
+                &:last-child {
+                    stroke: #FFC107;
+                }
+            }
+            
+            .progressbar_text {
+                font-size: 14px;
+                font-weight: 400;
+                color: #cacace;
+                height: 300px;
+                line-height: 350px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                padding: 0px;
+                margin: 0px;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
